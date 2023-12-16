@@ -58,10 +58,10 @@ function applyStylesBasedOnScreenSize() {
   // Check the current screen width
   if (window.innerWidth < 600) {
     // For screens less than 600 pixels wide (typically for mobile devices)
-    styleLink.href = '/mobile.css';
+    styleLink.href = 'public/mobile.css';
   } else {
     // For screens 600 pixels and wider (typically for desktop devices)
-    styleLink.href = '/style.css';
+    styleLink.href = 'public/style.css';
   }
 }
 
