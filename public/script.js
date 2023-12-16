@@ -4,10 +4,6 @@ window.addEventListener('load', () => {
   const rectangle3 = document.querySelector('.rectangle3');
   const rectangle4 = document.querySelector('.rectangle4');
   
-  // Set the initial width of the rectangle to the full page width
- 
-  
-  // Animate the rectangle to shrink to one side
   setTimeout(() => {
     rectangle.style.transition = 'width 1s ease';
     rectangle.style.width = '0';
@@ -17,11 +13,9 @@ window.addEventListener('load', () => {
     rectangle3.style.width = '0';
     rectangle4.style.transition = 'width 1s ease';
     rectangle4.style.width = '0';
-  }, 800); // Change the duration (in milliseconds) as per your preference
+  }, 800);
+
 });
-
-
-// Smooth scroll function
 function smoothScroll(target, duration) {
   var targetElement = document.querySelector(target);
   var targetPosition = targetElement.getBoundingClientRect().top;
@@ -49,7 +43,6 @@ function smoothScroll(target, duration) {
   requestAnimationFrame(animation);
 }
 
-// Attach event listener to navigation links
 var navLinks = document.querySelectorAll('#navbar .nav-links');
 navLinks.forEach(function(navLink) {
   navLink.addEventListener('click', function(event) {
@@ -59,113 +52,147 @@ navLinks.forEach(function(navLink) {
   });
 });
 
-// const observor = new IntersectionObserver((entries) => {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add('show');
-//     } else {
-//       entry.target.classList.remove('show');
-//     }
-//   });
-// });
+function applyStylesBasedOnScreenSize() {
+  const styleLink = document.getElementById('style-link');
 
-// const hiddenElementsleft = document.querySelectorAll('.hiddenleft');
-// hiddenElementsleft.forEach((el) => {
-//   observor.observe(el);
-// });
+  // Check the current screen width
+  if (window.innerWidth < 600) {
+    // For screens less than 600 pixels wide (typically for mobile devices)
+    styleLink.href = '/mobile.css';
+  } else {
+    // For screens 600 pixels and wider (typically for desktop devices)
+    styleLink.href = '/style.css';
+  }
+}
 
-// const hiddenElementsright = document.querySelectorAll('.hiddenright');
-// hiddenElementsright.forEach((el) => {
-//   observor.observe(el);
-// });
+// Initial application of styles when the page loads
+applyStylesBasedOnScreenSize();
 
-// Function to handle navbar visibility based on scroll direction
-// function handleNavbarScroll() {
-//   var previousScrollPosition = window.scrollY;
+// Listen for window resize events and reapply styles when the screen size changes
+window.addEventListener('resize', applyStylesBasedOnScreenSize);
 
-//   window.addEventListener('scroll', function() {
-//     var currentScrollPosition = window.scrollY;
 
-//     if (currentScrollPosition > previousScrollPosition) {
-//       // Scrolling down
-//       // Hide the navbar
-//       document.getElementById('navbar').classList.add('hidden');
-//     } else {
-//       // Scrolling up
-//       // Show the navbar
-//       document.getElementById('navbar').classList.remove('hidden');
-//     }
 
-//     previousScrollPosition = currentScrollPosition;
-//   });
-// }
+if(window.innerWidth>600){
 
-// Call the function to handle navbar scroll behavior
-// handleNavbarScroll();
 
-// Your existing smooth scroll and Intersection Observer code below...
+
 var controller=new ScrollMagic.Controller();
 
-// var ourScene=new ScrollMagic.Scene({
-//   triggerElement: ".projectsSection"
-// })
-// .setClassToggle('.projectHead','scroll-In')
-// .addIndicators()
-// .addTo(controller);
-// var titleBlocks = document.querySelectorAll(".titleBlock");
-// titleBlocks.forEach(function(titleBlock) {
-//   var FadeScene = new ScrollMagic.Scene({
-//     triggerElement: titleBlock,
-//     reverse:false
-//   })
-//   .setClassToggle(titleBlock, 'fade-In')
-//   .addIndicators()
-//   .addTo(controller);
-// });
+var titleTween = gsap.to(".projectHeading", { x: "60%", ease: "power1.out" });
+var titleTween2 = gsap.to(".SkillHeading", { x: "-60%", ease: "power1.out" });
 
-
-
-
-var titleTween = gsap.to(".projectHeading", { x: "100%", ease: "power1.out" });
-
-// Create a ScrollMagic scene
 var titleScene = new ScrollMagic.Scene({
     triggerElement: ".projectHead",
-    
-     // Trigger when the top of the container reaches the top of the viewport
-    duration: "100%", // Duration of the animation
+    duration: "900px",
 })
 .setTween(titleTween)
-.addIndicators()
+.addTo(controller);
+var titleScene2 = new ScrollMagic.Scene({
+  triggerElement: ".skills",
+  duration: "900px",
+})
+.setTween(titleTween2)
 .addTo(controller);
 
-
-// Assuming you have a ScrollMagic controller instance defined as 'controller'
-
-// Create a loop to apply animation to each ".mockups" element
 document.querySelectorAll(".mockups").forEach(function(mockup) {
-  var project = mockup.closest(".cover"); // Find the closest ancestor with class "cover"
+  var project = mockup.closest(".cover");
   var slidein = gsap.from(mockup, { y: "50%" });
 
-  // Create a ScrollMagic scene for each ".mockups" element with the project as the trigger element
   var slideinMockup = new ScrollMagic.Scene({
-    triggerElement: project, // Use the project as the trigger element
+    triggerElement: project,
     duration: "100%"
   })
     .setTween(slidein)
-    .addIndicators() // This adds indicators for debugging (remove in production)
-    .addTo(controller); // Add the scene to the ScrollMagic controller
+    .addTo(controller);
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+const elements = document.querySelectorAll(".Descr");
+
+elements.forEach((element) => {
+  gsap.to(element, {
+    scrollTrigger: {
+      trigger: element,
+      start: "top 20%",
+      end: "80% 100%",
+      pin: true,
+      pinSpacing: false,
+    },
+  });
+});
+}
+else{
+  var controller=new ScrollMagic.Controller();
+
+var titleTween = gsap.to(".projectHeading", { x: "60%", ease: "power1.out" });
+var titleTween2 = gsap.to(".SkillHeading", { x: "-80%", ease: "power1.out" });
+var photoSlide=gsap.to(".photos",{x:"-60%",ease: "power1.out"});
+var titleScene = new ScrollMagic.Scene({
+    triggerElement: ".projectHead",
+    duration: "900px",
+})
+.setTween(titleTween)
+.addTo(controller);
+var titleScene2 = new ScrollMagic.Scene({
+  triggerElement: ".skills",
+  duration: "900px",
+})
+.setTween(titleTween2)
+.addTo(controller);
+
+
+document.querySelectorAll(".photos").forEach(function(mockup) {
+  var projectL = mockup.closest(".info");
+    var Slidingg = new ScrollMagic.Scene({
+      triggerElement: projectL,
+      duration: "600px",
+    })
+    .setTween(photoSlide)
+    .addTo(controller);
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+const elements = document.querySelectorAll(".Descr");
+
+elements.forEach((element) => {
+  gsap.to(element, {
+    scrollTrigger: {
+      trigger: element,
+      start: "top 20%",
+      end: "80% 100%",
+      pin: true,
+      pinSpacing: false,
+    },
+  });
 });
 
 
-// var tweeenn=gsap.to(".projectOne",{x:"-10%",rotation:"-90",height:"1200px"});
 
-// var titlesBlocks=new ScrollMagic.Scene({
-//   triggerElement: ".hit",
-//   duration:"900s",
+  document.addEventListener("DOMContentLoaded", function () {
+    const popupButton = document.getElementById("popupButton");
+    const popupMenu = document.getElementById("navbar");
   
-// })
-// .setTween(tweeenn)
-// .addIndicators()
-// .addTo(controller);
-
+    // Function to open the popup menu
+    function openMenu() {
+        popupMenu.style.display = "block";
+    }
+  
+    // Function to close the popup menu
+    function closeMenu() {
+        popupMenu.style.display = "none";
+    }
+  
+    // Event listener to open the menu on button click
+    popupButton.addEventListener("click", openMenu);
+  
+    // Event listener to close the menu when clicking outside of it
+    document.addEventListener("click", function (event) {
+        if (!popupButton.contains(event.target) && !popupMenu.contains(event.target)) {
+            closeMenu();
+        }
+    });
+  });
+}

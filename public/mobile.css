@@ -1,0 +1,458 @@
+/* @media (max-width: 768px) { */
+    * {
+        box-sizing: border-box;
+      }
+      
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: #EEEEEE;
+        font-family: 'Rubik', sans-serif;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      
+      }
+    .nav {
+        display: none;
+    position: fixed; /* Change to fixed position for centering */
+    top: 50%; /* Position from the top */
+    left: 50%; /* Position from the left */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    }
+    
+    .nav a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+    }
+    #popupButton {
+        position: fixed;
+        top: 10px; /* Adjust as needed for the vertical position */
+        right: 10px; /* Adjust as needed for the horizontal position */
+        z-index: 2; /* Ensure the button is above other content */
+        /* Add any other styling you want for the button */
+    }
+    .Landing{
+        height: 100vh;
+        text-align: center;
+        font-size: 100%;
+    }
+    
+    .projectHead {
+        overflow: hidden;
+      }
+      .topMain{
+        position: relative;
+        top:30%;
+        
+      }
+      .main{
+        position: relative;
+        top:30%;
+       
+      }
+      .bottomMain{
+        position: relative;
+        top:30%;
+        
+        
+      }
+      .rectangle {
+        position: absolute;
+        top: 32.5%;
+        left: 10%;
+        background-color: #000000;
+        width: 120px;
+        height: 40px;
+        z-index: 2;
+      }
+      
+      .rectangle2 {
+        position: absolute;
+        top: 350px;
+        left: 30px;
+        background-color: #ffffff;
+        width: 400px;
+        height: 40px;
+        z-index: 2;
+      }
+      
+      .rectangle3 {
+        position: absolute;
+        top: 409px;
+        left: 15px;
+        background-color: #000000;
+        width: 425px;
+        height: 65px;
+        z-index: 2;
+      }
+      
+      .rectangle4 {
+        position: absolute;
+        top: 480px;
+        left: 140px;
+        background-color: #ffffff;
+        width: 180px;
+        height: 30px;
+        z-index: 2;
+      }
+      .mockups{
+        display: none;
+      }
+      .projectHead {
+        position: relative;
+        height: 30vh;
+        overflow: hidden;
+      }
+      .projectHeading{
+        position: relative;
+        font-size: 120px;
+        left:-200px;
+        font-family: "Avenir Heavy", sans-serif;
+        /* Specify the font family and font fallback */
+        font-weight: bold;
+        text-shadow: -6px 4px 10px rgba(0, 0, 0, 0.604);
+      }
+      .skills {
+        display: flex;
+        width: 100vw;
+        height: 30vh;
+        align-items: center;
+        justify-content: center;
+      
+      }
+      .SkillHeading {
+        font-size: 120px;
+        /* Adjust the font size as needed */
+        font-family: "Avenir Heavy", sans-serif;
+        /* Specify the font family and font fallback */
+        font-weight: bold;
+        /* Specify the font weight as "Heavy" */
+        text-shadow: -6px 4px 10px rgba(0, 0, 0, 0.604);
+        position: relative;
+        left: 70%;
+        color: #000000;
+      }
+      
+      .column {
+        display: flex;
+        font-size: 20px;
+        flex-basis: spacearound;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 40%;
+        /* Each box will take up 50% of the available space */
+        flex-grow: 0;
+        /* Prevent boxes from growing beyond 50% */
+        flex-shrink: 0;
+        /* Prevent boxes from shrinking below 50% */
+        height: 60px;
+        /* Adjust the height as needed */
+        box-sizing: border-box;
+        padding-right: 10%;
+      }
+      .form-box {
+        position: relative;
+        width: 80vw;
+        height: 60vh;
+        background: #171717;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 10%;
+        margin-top: 20%;
+        box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.604);
+      }
+      
+      
+      h2.contact {
+        position: relative;
+        font-size: 30px;
+        color: #ffffff;
+        text-align: center;
+        top: -20px;
+      }
+      
+      .input-box {
+        position: relative;
+        margin: 30px 0;
+        width: 80%;
+        border-bottom: 2px solid #fff;
+        top: -10px;
+        left:10%;
+      }
+      .btn {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 30%;
+        box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        position: relative;
+        margin: 10px;
+      }
+      
+      .btn i {
+        line-height: 40px;
+        padding-left: 8px;
+        font-size: 26px;
+        transition: 0.2s linear;
+      }
+      
+      .btn-1 {
+        color: #e34c26;
+      }
+      
+      .btn-1::before {
+        background-color: #e34c26;
+      }
+      
+      .btn-2 {
+        color: #264de4;
+      }
+      
+      .btn-2::before {
+        background-color: #264de4;
+      }
+      
+      .btn-3 {
+        color: #eace1d;
+      }
+      
+      .btn-3::before {
+        background-color: #eace1d;
+      }
+      
+      .btn-4 {
+        color: #cc6799;
+      }
+      
+      .btn-4::before {
+        background-color: #cc6799;
+      }
+      
+      .btn-5 {
+        color: #3c873a;
+      }
+      
+      .btn-5::before {
+        background-color: #3c873a;
+      }
+      
+      .btn:hover i {
+        transform: scale(1.5);
+        color: #fff;
+      }
+      
+      .btn::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: rotate(45deg);
+        left: -110%;
+        top: 90%;
+        transition: 0.5s linear;
+      }
+      
+      .btn:hover::before {
+        animation: hover 0.7s;
+        top: -10%;
+        left: -10%;
+        transition: 0.5s linear;
+      }
+      
+      @keyframes hover {
+        0% {
+          left: -110%;
+          top: 90%;
+        }
+      
+        100% {
+          left: 10%;
+          top: -30%;
+        }
+      
+        100% {
+          top: -10%;
+          left: -10%;
+        }
+      }
+      
+      .input-box label {
+        position: absolute;
+        top: 20%;
+        left: 5%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        pointer-events: none;
+        transition: .5s;
+        padding-bottom: 2px;
+      }
+      
+      input:focus~label,
+      input:valid~label,
+      .textAr:focus+label {
+        top: -6px;
+      }
+      
+      .input-box input {
+        width: 100%;
+        height: 20px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        padding: 0 45px 0 5px;
+        
+        color: #fff;
+      }
+      
+      .input-box ion-icon {
+        position: absolute;
+        right: 15%;
+        color: #fff;
+        font-size: 20px;
+        top: 20px;
+        display: none;
+      }
+      
+      .buttonSubmit button {
+        width: 80%;
+        height: 40px;
+        border-radius: 40px;
+        background: #fff;
+        border: none;
+        outline: none;
+        position: relative;
+        font-size: 20px;
+        font-weight: 600;
+        align-items: center;
+        left:10%;
+      }
+      
+      .textAr {
+        padding-top: 10px;
+        font-size: 20px;
+        resize: none;
+        width: 100px;
+        outline: none;
+        background: transparent;
+        border: none;
+        color: #fff;
+      }
+      
+      .about {
+        display: none;
+        position: absolute;
+        background-color: #c5c5c5;
+        width: 150px;
+        height: 50px;
+        right: 150px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20%;
+        box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.604);
+        
+      }
+      
+      .about div {
+        font-family: 'DM Sans', sans-serif;
+        position: relative;
+        width: 120px;
+        color: #000000;
+        font-size: 20px;
+        top: 0px;
+      
+      }
+      
+      .end {
+        height: 100vh;
+        padding-top: 10%;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+      }
+      
+      
+      
+      .heading-Aboutme {
+        position: absolute;
+        top: -250px;
+        left: 120px;
+      }
+      
+      .intro {
+        position: absolute;
+        top: -120px;
+        font-size: 5px;
+      }
+      .bottom {
+        height: 30vh;
+        width: 100%;
+        background-color: #000000;
+        margin-top: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+      
+      }
+      
+      .linksIcon {
+        position: relative;
+        top: 110px;
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+      }
+      
+      ion-icon {
+        font-size: 45px;
+        color: #ffffff;
+        transition: transform 0.5s;
+      }
+      
+      ion-icon:hover {
+        transform: translateY(-15px);
+      }
+      
+      
+      .copyRight {
+        font-size: 10px;
+        color: #666;
+        /* Change the color as needed */
+        display: block;
+        padding-top: 70px;
+      }
+
+      .cover{
+        height: 80vh;
+
+      }
+      .photos{
+        display: flex;
+        flex-direction: row;
+      }
+      .photos img{
+        width:50%;
+        height: 50%;
+      }
+    /* Add more CSS styles as needed */
+    
+/* } */
