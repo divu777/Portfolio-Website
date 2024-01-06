@@ -8,7 +8,7 @@ const app=express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
-app.listen(3000,function(){
+app.listen(4000,function(){
     console.log("connected");
 });
 app.get("/",function(req,res){
@@ -38,10 +38,9 @@ app.post('/', (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log('Error sending email:', error);
-      res.status(500).send('Something went wrong.');
     } else {
       console.log('Email sent:', info.response);
-      res.status(200).send('Message sent successfully.');
     }
   });
+  
 });
