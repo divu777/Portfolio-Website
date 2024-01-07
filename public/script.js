@@ -1,3 +1,4 @@
+
 // window.addEventListener('load', () => {
 //   const rectangle = document.querySelector('.rectangle');
 //   const rectangle2 = document.querySelector('.rectangle2');

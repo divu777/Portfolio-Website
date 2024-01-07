@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@900&display=swap');
 * {
@@ -204,7 +205,7 @@ h3.bottomMain{
   height: 430vh;
   position: relative;
   background-color: rgba(189, 189, 189, 0.24); /* Adjust the opacity value (0.0 to 1.0) */
-  background-image: url('/Images/projectBack2.jpg');
+  background-image: url('/public/Images/projectBack2.jpg');
   background-size: auto 3200px;
   background-position: auto 50px;
   background-repeat: no-repeat;
@@ -730,11 +731,11 @@ ion-icon:hover {
 .KAM2 {
   position: absolute;
   display: inline-block;
-  right: 30%;
+  right: 25%;
   top: 710%;
   z-index: 10;
   white-space: pre-line;
-  width:950px;
+  width:1000px;
   font-size: 20px;
  
 }
@@ -848,7 +849,7 @@ ion-icon:hover {
 }
 .two{
   font-size: 200px;
-  right:5%;
+  right:3%;
   
 }
 .three{
@@ -865,7 +866,7 @@ ion-icon:hover {
 .secondP:hover{
   .two{
     text-shadow: none; /* Remove outline on hover */
-    color:#090909;
+    color:#0e36ff;
     }
 }
 .thirdP:hover{
@@ -879,20 +880,20 @@ ion-icon:hover {
   color: #fff;
   font-size: 80px;
   position: relative;
-  bottom: 90px;
-  right:160px;
+  bottom: 80px;
+  right:165px;
 }
 .projT2{
   padding-top: 10px;
   margin-top: 60px;
   font-size: 60px;
   right:10px;
-  bottom: 80px;
+  bottom: 70px;
 }
 .projT3{
   font-size: 40px;
   right:120px;
-  bottom: 40px;
+  bottom: 30px;
 }
 .detail{
   display: flex;
@@ -908,10 +909,11 @@ ion-icon:hover {
   right:0px;
   font-weight: 100;
   color: #f0f0f0;
+  
 }
 .projInfo2{
   font-size: 18px;
-  bottom: 160px;
+  bottom: 150px;
   color: #f0f0f0;
 }
 .projInfo3{
@@ -934,19 +936,21 @@ ion-icon:hover {
 .stack{
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  gap: 35px;
   position: relative;
   right: 230px;
-  bottom: 170px;
+  bottom: 165px;
   z-index: 4;
 }
 .stk2{
-  right:180px;
-  bottom: 150px;
+  gap: 35px;
+  right:170px;
+  bottom: 140px;
 }
 .stk3{
   right:150px;
   bottom: 70px;
+  gap: 30px;
 }
 
 .lik{
@@ -968,21 +972,22 @@ ion-icon:hover {
   border-radius: 20px;
   background-color: #000000;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 20px;
   border:2px solid #fff;
+  left:5px;
 }
 
 .b2{
   width: 140px;
   height: 60px;
-  bottom: 20px;
+  bottom: 8px;
   background-color: #0578FF;
   left:70px;
 }
 .b3{
   width: 120px;
   height: 50px;
-  top:60px;
+  top:50px;
   left:145px;
   font-size: 15px;
 }
@@ -1007,22 +1012,24 @@ ion-icon:hover {
 }
 
 .arr {
-  font-size: 100px;
+  font-size: 80px;
   position: absolute;
   transform: rotate(315deg); /* remove the quotes around 45deg */
-  left: 80%;
-  font-weight: 700;
-  top:90%;
+  left: 85%;
+  font-weight: 600;
+  top:91%;
   background-color: #3c873a;
   color: #ffffff;
 }
 .a2{
   font-size: 80px;
   color: #ffffff;
+  top:90%;
 }
 .a3{
   font-size: 60px;
   color: #ffffff;
+  top:93%;
 }
 .moving-text {
   display: inline-block;
@@ -1204,4 +1211,115 @@ ion-icon:hover {
   z-index: 3;
   text-align: end;
   transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+body.loaded #loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+body.loaded #loader-wrapper .loader-section.section-right {
+  transform: translateX(100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+body.loaded #loader {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+body.loaded #loader-wrapper {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  overflow: hidden;
+  display: none; /* Added display: none; */
+}
+
+.no-js #loader-wrapper {
+  display: none;
+}
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #16a085;
+  animation: spin 1.7s linear infinite;
+  z-index: 11;
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #e74c3c;
+  animation: spin-reverse .6s linear infinite;
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #f9c922;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #222;
+  z-index: 10;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
 }
