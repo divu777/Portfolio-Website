@@ -17,24 +17,24 @@ app.get("/",function(req,res){
 app.post('/', (req, res) => {
   const { name, email, message } = req.body;
 
-  // Create a reusable transporter object using SMTP transport
+
   let transporter = nodemailer.createTransport({
-    service: 'Gmail', // You can use any email service that supports SMTP
+    service: 'Gmail', 
     auth: {
-      user: 'divakarjaiswal777@gmail.com', // Your email account
-      pass: mailerKey, // Your email password
+      user: 'divakarjaiswal777@gmail.com', 
+      pass: mailerKey,
     },
   });
 
-  // Set up the email data
+  
   let mailOptions = {
-    from: 'divakarjaiswal777@gmail.com', // Sender address
-    to: 'divakarjaiswal7777@gmail.com', // Recipient address
-    subject: 'New contact form submission', // Subject line
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`, // Email body
+    from: 'divakarjaiswal777@gmail.com', 
+    to: 'divakarjaiswal7777@gmail.com', 
+    subject: 'New contact form submission', 
+    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`, 
   };
 
-  // Send the email
+ 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log('Error sending email:', error);

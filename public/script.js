@@ -1,22 +1,4 @@
 
-// window.addEventListener('load', () => {
-//   const rectangle = document.querySelector('.rectangle');
-//   const rectangle2 = document.querySelector('.rectangle2');
-//   const rectangle3 = document.querySelector('.rectangle3');
-//   const rectangle4 = document.querySelector('.rectangle4');
-  
-//   setTimeout(() => {
-//     rectangle.style.transition = 'width 1s ease';
-//     rectangle.style.width = '0';
-//     rectangle2.style.transition = 'width 1s ease';
-//     rectangle2.style.width = '0';
-//     rectangle3.style.transition = 'width 1s ease';
-//     rectangle3.style.width = '0';
-//     rectangle4.style.transition = 'width 1s ease';
-//     rectangle4.style.width = '0';
-//   }, 800);
-
-// });
 function smoothScroll(target, duration) {
   var targetElement = document.querySelector(target);
   var targetPosition = targetElement.getBoundingClientRect().top;
@@ -54,11 +36,6 @@ navLinks.forEach(function(navLink) {
 });
 
 
-
-
-
-
-
 var controller=new ScrollMagic.Controller();
 
 var titleTween = gsap.to(".projectHeading", { x: "60%", ease: "power1.out" });
@@ -77,34 +54,7 @@ var titleScene2 = new ScrollMagic.Scene({
 .setTween(titleTween2)
 .addTo(controller);
 
-// document.querySelectorAll(".mockups").forEach(function(mockup) {
-//   var project = mockup.closest(".cover");
-//   var slidein = gsap.from(mockup, { y: "50%" });
 
-//   var slideinMockup = new ScrollMagic.Scene({
-//     triggerElement: project,
-//     duration: "100%"
-//   })
-//     .setTween(slidein)
-//     .addTo(controller);
-// });
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// const elements = document.querySelectorAll(".Descr");
-
-// elements.forEach((element) => {
-//   gsap.to(element, {
-//     scrollTrigger: {
-//       trigger: element,
-//       start: "top 20%",
-//       end: "80% 100%",
-//       pin: true,
-//       pinSpacing: false,
-//     },
-//   });
-// });
-// }
 const logo=document.querySelectorAll('#logo path');
 for(let i=0;i<logo.length;i++){
   console.log(`${logo[i].getTotalLength()}`);
