@@ -205,7 +205,7 @@ h3.bottomMain{
   height: 430vh;
   position: relative;
   background-color: rgba(189, 189, 189, 0.24); /* Adjust the opacity value (0.0 to 1.0) */
-  background-image: url('/Images/projectBack2.jpg');
+  background-image: url('Images/projectBack2.jpg');
   background-size: auto 3200px;
   background-position: auto 50px;
   background-repeat: no-repeat;
